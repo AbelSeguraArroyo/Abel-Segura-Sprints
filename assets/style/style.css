@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: rgb(49, 20, 20);
+    height: 6,5rem;
+    border: 2px solid black;
+}
+main{
+    background-color: rgb(61, 35, 35);
+}
+header img{
+    width: 6rem;
+}
+.isotipo{
+    margin-bottom: 1rem;
+}
+
+.logo2{
+    width: 15rem;
+}
+
+.encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegador{
+    margin-right: 4rem;
+}
+nav a{
+    margin: 1rem;
+    text-decoration: none;
+    background-color: rgb(86, 95, 86);
+    border: 2.5px solid black;
+    padding: 0.6rem;
+    color: antiquewhite;
+}
+
+.contenedor-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.contenedor-img h4, p{
+    margin: 2rem;
+    font-size: 1.2rem;
+    color: antiquewhite;
+}
+.banner{
+    width: 85%;
+    height: 28rem;
+    margin-top: 2rem;
+    max-width: 100%;
+    
+}
+.contenedorAction{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+.contenedorAction img{
+width: 25rem;
+height: 25rem;
+border: 3px solid black;
+}
+
+
+
+
+#contenedorCards {
+    width: 1200px;
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 33%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 32px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  
+  .cardInfo {
+    padding: 15px;
+    background-color: #dfd9d9;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  
+  /* Ajusta el tamaño y espaciado del texto dentro de las tarjetas */
+  .tituloCard {
+    font-size: 1,5rem;
+    margin-bottom: 5px;
+  }
+  
+  .taglineCard {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .descripcionCard {
+    font-size: 1rem;
+    color: black;
+  }
+
+  footer{
+    background-color: rgb(49, 20, 20);
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+  }
+  
