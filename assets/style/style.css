@@ -71,7 +71,10 @@ height: 25rem;
 border: 3px solid black;
 }
 
-
+.tituloMovies{
+  text-align: center;
+  padding: 2rem;
+}
 
 
 #contenedorCards {
@@ -127,3 +130,4 @@ border: 3px solid black;
     border: 2px solid black;
   }
   
+
