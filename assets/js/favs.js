@@ -20,7 +20,7 @@ fetch("https://moviestack.onrender.com/api/movies", {
         $favsContainer.innerHTML = listaPeliculas(movies)
 
     console.log(movies)
-
+console.log(listaPeliculas(movies))
     $favsContainer.addEventListener("click", (e) => {
             console.log(e.target.dataset.id)
             if (e.target.dataset.id != undefined) {
@@ -33,19 +33,52 @@ fetch("https://moviestack.onrender.com/api/movies", {
 
         function listaPeliculas(movies) {
             const favorites = JSON.parse(localStorage.getItem("favorites")) || []
-            contenedorCards.innerHTML = ''
+
+            let card = ''
             if (favorites.length == 0) {
                 contenedorCards.appendChild(crearCard('No hay películas guardadas'))
             } else {
                 for (const movie of movies) {
-                    const { image, title, tagline, overview, id } = movie
+                    let { image, title, tagline, overview, id } = movie
 
-                    const card = crearCard(image, title, tagline, overview, id)
+                    card += crearCard(image, title, tagline, overview, id)
 
-                    contenedorCards.innerHTML += card
+        
+                
                 }
+
+                
             }
             return card
+        }
+
+        function crearCard(image, title, tagline, overview, id) {
+            const favorites = JSON.parse(localStorage.getItem("favorites")) || []
+
+            const fav = favorites.includes(id)
+
+            const plantillaCard = `
+        <div class="card">
+                    <img src="https://moviestack.onrender.com/static/${image}" alt="">
+                    <div class="cardInfo">
+                        <h3 class="tituloCard">${title}</h3>
+                        <h4 class="taglineCard">${tagline}</h4>
+                        <p class="descripcionCard">${overview}</p>
+                        <div>
+                        <button class='btnFavorite2' data-id="${id}" > Favorito </button>
+                        <a class='button' href='./movieInfo.html?id=${id}'>info</a>
+                        </div>
+    
+                    </div>
+        </div>
+        `   
+        
+            if (fav) {
+                return plantillaCard
+            }else{
+                return ''
+            }
+
         }
     })
     .catch((e) => console.error(e))

@@ -18,10 +18,10 @@ fetch("https://moviestack.onrender.com/api/movies", {
             console.log('hola')
             if(e.target.dataset.id != undefined){
                 console.log('chau')
-                listaPeliculas(movies)
+                
                 marcarFavorite(e.target.dataset.id, e)
             }
-            listaPeliculas(movies)
+            
         })
 
 
@@ -59,7 +59,7 @@ fetch("https://moviestack.onrender.com/api/movies", {
             <h4 class="taglineCard">${tagline}</h4>
             <p class="descripcionCard">${overview}</p>
             <div>
-            <button class='btnFavorite2' data-id="${id}" > No Favorito </button>
+            <button class='btnFavorite' data-id="${id}" > No Favorito </button>
             <a class='button' href='./movieInfo.html?id=${id}'>info</a>
             </div>
 
@@ -77,14 +77,14 @@ fetch("https://moviestack.onrender.com/api/movies", {
 
 
                 favorites.push(movieId);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
+                
             } else {
 
 
-                favorites.splice(index, 1);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
+                favorites.splice(index, 1)
+                
             }
-
+            
 
             localStorage.setItem("favorites", JSON.stringify(favorites));
 
@@ -204,3 +204,15 @@ fetch("https://moviestack.onrender.com/api/movies", {
     )
 
     .catch((e) => console.error(e))
+
+    const personas = [
+       { nombre: 'abel', edad: 21},
+       { nombre: 'alex', edad: 30},
+       { nombre: 'juan', edad: 22},
+       { nombre: 'paco', edad: 15},
+    ]
+
+
+
+    personas.sort((a, b) => b.edad - a.edad)
+    console.log(personas)
